@@ -10,15 +10,15 @@ public class Main {
         Boolean failed = false;
 
         // Start client
-        for (int i = 0; i < 100000; i++) {
+        for (int i = 0; i < 10000; i++) {
             try {
                 eve.startConnection(IP, PORT);
 
-                String[] messages = {"Hello WALL-E", "Hello sumthin else"};
+                String[] messages = {"Hello WALL-E", "Something else"};
                 for (String message : messages) {
                     System.out.println("Sending message: " + message);
                     // Prints the server reply:
-                    System.out.println(eve.sendMessage(message));
+                    System.out.println("Received: " + eve.sendMessage(message));
                 }
 
                 eve.stopConnection();
