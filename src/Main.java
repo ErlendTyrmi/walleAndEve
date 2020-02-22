@@ -1,6 +1,7 @@
 import java.io.IOException;
 
 public class Main {
+    // Test class
     public static final int PORT = 5555;
     public static final String IP = "127.0.0.1";
 
