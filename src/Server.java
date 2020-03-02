@@ -8,14 +8,14 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * Server running on the laptop that is reading and interpreting images
+ * @author erlend
  */
-public class LaptopServer {
+public class Server {
     public static int PORT = 5555;
     private ServerSocket serverSocket;
 
     public static void main(String[] args) {
-        LaptopServer server = new LaptopServer();
+        Server server = new Server();
         try {
             server.startServer(PORT);
         } catch (IOException e) {
@@ -31,7 +31,7 @@ public class LaptopServer {
      */
     public void startServer(int port) throws IOException {
         serverSocket = new ServerSocket(port);
-        System.out.println("Laptop Server started");
+        System.out.println("Server started.");
 
         // Listen for new connections forever
         while (true) {
@@ -41,7 +41,7 @@ public class LaptopServer {
     }
 
     /**
-     * Stops the server, likely not needed for Golf Bot project
+     * Stops the server
      *
      * @throws IOException
      */
@@ -71,14 +71,12 @@ public class LaptopServer {
 
                 String receivedMessage;
                 while ((receivedMessage = in.readLine()) != null) {
-                    if ("Hello WALL-E".equals(receivedMessage)) {
+                    if ("Hello EV3".equals(receivedMessage)) {
                         // Method call
-                        out.println("Hello EVE");
+                        out.println("Hello WALL-E");
                     } else {
                         // Alternative action
-                        out.println("1001 1011 1011 1000 0001 1010 1001 1100 " +
-                                "1001 0101 0101 1111 0001 1011 1011 1001 " +
-                                "Spork?");
+                        out.println("Spork?");
                     }
                 }
 

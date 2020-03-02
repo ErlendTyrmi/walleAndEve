@@ -5,10 +5,9 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 /**
- * The client is run from the robot, and lets the robot request status and navigation data.
+ * @author erlend
  */
-public class BotClient {
-
+public class Client {
     private Socket clientSocket;
     private PrintWriter out;
     private BufferedReader in;
@@ -16,8 +15,8 @@ public class BotClient {
     /**
      * Makes a new connection to the server
      *
-     * @param ip,   static ip of the machine linked to the camera
-     * @param port, must match the servers port
+     * @param ip   static ip of the machine linked to the camera
+     * @param port must match the servers port
      * @throws IOException
      */
     public void startConnection(String ip, int port) throws IOException {
